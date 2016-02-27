@@ -1,0 +1,23 @@
+{
+  "name": "socketrpc",
+  "version": "0.1.0",
+  "main": "main.js",
+  "dependencies": {
+    "nodejs-websocket": "^1.4.0"
+  },
+  "description": "Simple tool to enable remote RPC from browser client to node.js server.",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://jexah@github.com/Jexah/socketrpc.js.git"
+  },
+  "author": "Jeremy Short",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jexah/socketrpc.js/issues"
+  },
+  "homepage": "https://github.com/Jexah/socketrpc.js#readme"
+}
