@@ -5,7 +5,7 @@ const websocket = require('nodejs-websocket');
 const wsHooks = {};
 
 // Initialize the websocket server on port, return the function to register procedures.
-const initialize = (port, debug) => {
+exports = (port, debug) => {
   websocket.createServer().listen(port).on('connection', (ws) => {
     ws.on('text', (data) => {
       const obj = JSON.parse(data);
