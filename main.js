@@ -1,11 +1,12 @@
 // All requires
-const websocket = require('nodejs-websocket');
+const socketio = require('socket.io');
 
 // Record that stores all of the generated hooks
 const wsHooks = {};
 
 // Initialize the websocket server on port, return the function to register procedures.
-module.exports = (io, debug) => {
+module.exports = (http, debug) => {
+  const io = socketio(http);
   io.on('connection', socket => {
     if(debug) console.log(`Socket connected.`);
     socket.on('rpc', obj => {
