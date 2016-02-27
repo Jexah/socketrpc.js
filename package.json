@@ -1,6 +1,6 @@
 {
   "name": "socketrpc",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "main": "main.js",
   "dependencies": {
     "socket.io": "^1.4.5"
