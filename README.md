@@ -3,7 +3,7 @@ Simple tool to enable remote RPC from browser client to node.js server.
 
 ## Server
 
-```
+```javascript
 const port = 80;
 const rpc = require('RPC')(port);
 
@@ -38,9 +38,11 @@ rpc('divide', (number1, number2, resolve, reject) => {
 
 ## Client
 
-`<script src="./socketrpc.js"></script>`
-
+```html
+<script src="./socketrpc.js"></script>
 ```
+
+```javascript
 const port = 80;
 const rpc = RPC(80);
 
