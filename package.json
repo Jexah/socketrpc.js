@@ -14,7 +14,7 @@
     "type": "git",
     "url": "git+https://jexah@github.com/Jexah/socketrpc.js.git"
   },
-  "author": "Jeremy Short",
+  "author": "Jeremy Short <ijexah@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Jexah/socketrpc.js/issues"
