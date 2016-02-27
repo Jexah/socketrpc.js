@@ -16,6 +16,7 @@ const RPC = (port => {
     const obj = JSON.parse(evt.data);
     if(Object.keys(wsHooks).indexOf(obj.uid) != -1){
       wsHooks[obj.uid](obj.val);
+      delete wsHooks[obj.uid];
     }
   }
 
