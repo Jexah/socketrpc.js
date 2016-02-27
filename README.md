@@ -44,7 +44,8 @@ rpc('divide', (number1, number2, resolve, reject) => {
 
 ```javascript
 const port = 80;
-const rpc = RPC(80);
+const debug = true;
+const rpc = RPC(80, debug); // The debug parameter here is optional. True = display warnings in console, false = do not display warnings in console.
 
 rpc('add', 1, 2).then(val => {
   console.log(val); // [1, 2, 3]: Array[3]
