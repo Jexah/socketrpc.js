@@ -1,5 +1,5 @@
 # socketrpc.js
-Simple tool to enable remote RPC from browser client to node.js server.
+Simple tool to enable RPC from browser client to node.js server via websockets.
 
 ## Server
 
