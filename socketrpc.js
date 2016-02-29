@@ -1,24 +1,23 @@
-const RPC = (port => {
+const RPC = (() => {
+
   const wsHooks = {};
 
-  const ws = new WebSocket(`ws://${window.location.hostname}:${port}`);
+  const socket = io();
 
   function sendRequest(procedureName, ...args){
     return new Promise((resolve, reject) => {
       const uid = Math.random().toString();
       wsHooks[uid] = resolve;
-      ws.send(JSON.stringify({procedureName: procedureName, args: args, uid: uid}));
+      socket.emit('rpc', {procedureName: procedureName, args: args, uid: uid});
     });
   }
 
-  ws.onmessage = (evt) =>
-  {
-    const obj = JSON.parse(evt.data);
+  socket.on('rpc', (obj) => {
     if(Object.keys(wsHooks).indexOf(obj.uid) != -1){
       wsHooks[obj.uid](obj.val);
       delete wsHooks[obj.uid];
     }
-  }
+  });
 
   return sendRequest;
 });
