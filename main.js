@@ -10,10 +10,12 @@ module.exports = (http, debug) => {
   io.on('connection', socket => {
     if(debug) console.log(`Socket connected.`);
     socket.on('rpc', obj => {
+      if(debug) console.log(`Received: rpc | ${JSON.stringify(obj)}`);
       if(Object.keys(wsHooks).indexOf(obj.procedureName) != -1){
         new Promise((resolve, reject) => { 
           wsHooks[obj.procedureName](...obj.args, resolve, reject);
         }).then(val => {
+          if(debug) console.log(`Emitted: rpc | {uid: obj.uid, val: val}`);
           socket.emit('rpc', {uid: obj.uid, val: val});
         });
       }else{
